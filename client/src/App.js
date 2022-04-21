@@ -14,6 +14,9 @@ import Parking from "./components/Parking"
 
 import {Route,Routes} from "react-router-dom";
 
+import Facilities from "./components/Facilities";
+import Contact from "./components/Contact";
+
 function App() {
   return (
 
@@ -26,7 +29,9 @@ function App() {
           <Route exact path="/gym/" element={<Gym/>}/>
           <Route exact path="/spa/" element={<Spa/>}/>
           <Route exact path="/restaurant/" element={<Restaurant/>}/>
+          <Route exact path="/facilities/" element={<Facilities/>}/>
           <Route exact path="/parking/" element={<Parking/>}/>
+            <Route exact path="/contact/" element={<Contact/>}/>
           <Route path="*" element={<Error/>}/>
         </Routes>
       </>

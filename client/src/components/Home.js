@@ -3,6 +3,7 @@ import Hero from "./Hero"
 import Banner from "./Banner"
 import Facilities from "./Facilities"
 import { useNavigate } from 'react-router-dom';
+import Contact from "./Contact";
 const Home = () => {
     const navigate = useNavigate();
     return (
@@ -19,6 +20,7 @@ const Home = () => {
         </Banner>
         </Hero>
             <Facilities/>
+            <Contact/>
         </React.Fragment>
     )
 }

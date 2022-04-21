@@ -1,19 +1,15 @@
-const sql = require('mssql')
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'root',
+    password : 'steaua866'
+});
 
-module.exports = {
-    connect: async function (ip, port, user, pass) {
-        // throw new Error('Invalid credentials');
-        await sql.connect('Server=localhost,1433;Database=ProiectII;User Id=;Password=;Encrypt=true')
-        const result = await sql.query`select * from mytable where id = ${value}`
-        console.dir(result)
-        return this;
-    },
-
-    send: function () {
-
-    },
-
-    receive: function () {
-
+connection.connect(function(err) {
+    if (err) {
+        console.error('error connecting: ' + err.stack);
+        return;
     }
-};
+
+    console.log('connected as id ' + connection.threadId);
+});
