@@ -271,6 +271,15 @@ h6 {
   background: url("images/proba.jpg") center/cover no-repeat;
   min-height: 60vh;
 }
+.gymHero{
+  min-height: calc(100vh - 66px);
+  background: url("images/gympoza.jpg") center/cover no-repeat;
+}
+
+.parkingHero{
+  background: url("images/parkingpoza.jpeg") center/cover no-repeat;
+  min-height: 90vh;
+}
 /* End of Hero */
 /* Banner */
 .banner {
@@ -621,3 +630,12 @@ h6 {
   margin: 10rem auto;
 }
 /* end of rooms fitler*/
+
+/* align an item*/
+.center {
+  width: 30vw;
+  margin: auto;
+  display: grid;
+  padding: 80px 30px 50px;
+}
+/*end of align */

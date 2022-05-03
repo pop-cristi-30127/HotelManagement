@@ -18,6 +18,7 @@ const Home = () => {
         </button>
         </Banner>
         </Hero>
+
             <Facilities/>
         </React.Fragment>
     )
