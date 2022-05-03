@@ -9,6 +9,8 @@ import Gym from "./components/Gym"
 import Restaurant from "./components/Restaurant"
 import Spa from "./components/Spa"
 import Parking from "./components/Parking"
+import SingleRoom from "./components/SingleRoom";
+import data from "./data";
 
 
 
@@ -25,6 +27,7 @@ function App() {
         <Routes>
           <Route exact path ="/" element={<Home/>}/>
           <Route exact path="/rooms/" element={<Rooms/>}/>
+            <Route exact path="/rooms/:slug" element={<SingleRoom/>}/>
           <Route exact path="/login/" element={<Login/>}/>
           <Route exact path="/gym/" element={<Gym/>}/>
           <Route exact path="/spa/" element={<Spa/>}/>

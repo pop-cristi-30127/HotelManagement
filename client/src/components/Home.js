@@ -4,6 +4,7 @@ import Banner from "./Banner"
 import Facilities from "./Facilities"
 import { useNavigate } from 'react-router-dom';
 import Contact from "./Contact";
+import FeaturedRooms from "./FeaturedRooms";
 const Home = () => {
     const navigate = useNavigate();
     return (
@@ -20,7 +21,9 @@ const Home = () => {
         </Banner>
         </Hero>
             <Facilities/>
+            <FeaturedRooms/>
             <Contact/>
+
         </React.Fragment>
     )
 }
