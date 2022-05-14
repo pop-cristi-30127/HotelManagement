@@ -33,8 +33,12 @@ export default class Navbar extends Component {
                             <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <Link to="/rooms/">Explore</Link>
+                            <Link to="/facilities/">Facilities</Link>
                         </li>
+                        <li>
+                            <Link to="/contact/">Contact</Link>
+                        </li>
+
                     </ul>
                     <ul  className={this.state.isOpen ? "nav-links show-nav loginButton" : "nav-links loginButton"}
                     >

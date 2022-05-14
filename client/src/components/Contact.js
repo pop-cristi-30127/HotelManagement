@@ -1,9 +1,26 @@
 import React from 'react'
+import Title from "./Title";
 
-export default function Rooms() {
+import {FaHome} from "react-icons/fa";
+import Hero from "./Hero";
+
+export default function Contact() {
     return (
-        <div>
-           Contact
-        </div>
+
+        <section className="contact">
+            <Title title="Contact Us"/>
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
     )
 }
