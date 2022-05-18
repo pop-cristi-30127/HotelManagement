@@ -18,7 +18,7 @@ module.exports={
         }else{
             res.json({
                 success:0,
-                message:"Access denied! Unautohrized user!"
+                message:"Access denied! Unauthorized user!"
             });
         }
     }

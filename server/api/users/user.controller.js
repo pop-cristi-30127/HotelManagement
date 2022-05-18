@@ -90,18 +90,22 @@ module.exports={
     },
     login: (req,res)=>{
         const body=req.body;
+        console.log(body)
         getUserByEmail(body.Email,(err,results)=>{
             if(err){
                 console.log(err);
+                return res.status(400).json({
+                    success: 0,
+                    data: "MUIE"
+                });
             }
             if(!results){
-                return res.json({
+                return res.status(400).json({
                     success: 0,
                     data: "Invalid Email or password"
                 });
             }
-            
-            const result =compareSync(body.Password,results[0].Password);
+            const result = compareSync(body.Password,results[0].Password);
 
             if(result){
                 results.Password=undefined;
@@ -114,9 +118,9 @@ module.exports={
                     token: jsontoken
                 });
             }else{
-                return res.json({
-                    success:0,
-                    data: "Invalid email or password"
+                return res.status(400).json({
+                    success: 0,
+                    data: "Invalid Email or password"
                 });
             }
         });

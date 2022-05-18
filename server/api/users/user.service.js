@@ -85,8 +85,10 @@ module.exports={
             `select * from clients where Email=?`,
             [Email],
             (error,results,fields)=>{
-                if(error){
-                    callBack(error);
+                if(results.length === 0){
+                    console.log("err:",error);
+                     return callBack(error);
+
                 }
                 return callBack(null,results);
             }
