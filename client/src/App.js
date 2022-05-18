@@ -12,7 +12,9 @@ import Parking from "./components/Parking"
 
 
 
+
 import {Route,Routes} from "react-router-dom";
+import Italian from "./components/Italian";
 
 function App() {
   return (
@@ -27,10 +29,13 @@ function App() {
           <Route exact path="/spa/" element={<Spa/>}/>
           <Route exact path="/restaurant/" element={<Restaurant/>}/>
           <Route exact path="/parking/" element={<Parking/>}/>
+            <Route exact path="/Italian_Food/" element={<Italian/>}/>
           <Route path="*" element={<Error/>}/>
         </Routes>
       </>
+
   );
 }
 
 export default App;
+
