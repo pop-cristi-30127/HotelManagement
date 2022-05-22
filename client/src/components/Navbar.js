@@ -40,7 +40,7 @@ export default class Navbar extends Component {
                         </li>
 
                     </ul>
-                    <ul  className={this.state.isOpen ? "nav-links show-nav loginButton" : "nav-links loginButton"}
+                    <ul  className={this.state.isOpen ? "nav-links show-nav loginButton1" : "nav-links loginButton"}
                     >
                         <li>
                             <Link  to="/login/">Login</Link>

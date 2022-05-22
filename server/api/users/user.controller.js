@@ -96,7 +96,7 @@ module.exports={
                 console.log(err);
                 return res.status(400).json({
                     success: 0,
-                    data: "MUIE"
+                    data: "Error"
                 });
             }
             if(!results){

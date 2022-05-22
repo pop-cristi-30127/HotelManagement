@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import {Link} from "react-router-dom";
-import {useNavigate} from 'react-router-dom';
+
 import Hero from "./Hero"
 import axios from "../api/axios";
 
@@ -59,7 +59,7 @@ function Login() {
         <div className="form">
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
-                    <label>Username </label>
+                    <label>Email </label>
                     <input type="email" name="email" required onChange={e => setEmail(e.target.value)}/>
                     {errorMessages ? renderErrorMessage() : ""}
                 </div>
@@ -71,6 +71,7 @@ function Login() {
                 <div className="button-container">
                     <input type="submit"/>
                 </div>
+                <small className="reg1">Don't have an account?  <Link to="/register/" className="reg">Register now</Link></small>
             </form>
         </div>
     );

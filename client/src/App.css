@@ -44,6 +44,18 @@ input[type="password"] {
   cursor: pointer;
   outline: none;
 }
+.loginButton1{
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 16px;
+  font-size: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  visibility: hidden;
+}
 
 input[type="submit"] {
   margin-top: 10px;
@@ -215,7 +227,7 @@ h6 {
 }
 
 .show-nav {
-  height: 100px;
+  height: 150px;
 }
 @media screen and (min-width: 768px) {
   .nav-btn {
@@ -271,7 +283,7 @@ h6 {
   background: url("images/proba.jpg") center/cover no-repeat;
   min-height: 60vh;
 }
- HEAD
+
 .gymHero{
   min-height: calc(100vh - 66px);
   background: url("images/gympoza.jpg") center/cover no-repeat;
@@ -298,6 +310,7 @@ h6 {
   text-align: center;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
+  left:50%;
 }
 .banner h1 {
   font-size: 2.5rem;
@@ -646,7 +659,7 @@ h6 {
   margin: 10rem auto;
 }
 /* end of rooms fitler*/
- HEAD
+
 
 /* align an item*/
 .center {
@@ -665,6 +678,25 @@ h6 {
   margin-left: 8px;
   margin-bottom: 4px;
   vertical-align: middle;
+
+}
+.reg
+{
+  text-decoration: none;
+
+
+  color: var(--mainBlack);
+
+}
+.reg:hover{
+  color: var(--darkGrey);
+}
+.reg1
+{
+  text-decoration: none;
+
+
+  color: var(--primaryColor);
 
 }
 
