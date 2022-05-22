@@ -1,19 +1,18 @@
-const sql = require('mssql')
+const { createPool }=require("mysql");
+const pool=createPool({
+    port: 3306,
+    host: "localhost",
+    user: "root",
+    password:"steaua866",
+    database: "mydb",
+    connectionLimit: 10
+});
 
-module.exports = {
-    connect: async function (ip, port, user, pass) {
-        // throw new Error('Invalid credentials');
-        await sql.connect('Server=localhost,1433;Database=ProiectII;User Id=;Password=;Encrypt=true')
-        const result = await sql.query`select * from mytable where id = ${value}`
-        console.dir(result)
-        return this;
-    },
+module.exports= pool;
 
-    send: function () {
 
-    },
 
-    receive: function () {
 
-    }
-};
+
+
+

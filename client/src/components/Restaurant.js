@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Banner from "./Banner";
 import TypesOfCuisine from "./TypesOfCuisine"
 const Restaurant = () => {
-    const navigate = useNavigate();
+
         return (
             <React.Fragment>
             <Hero hero="restaurantHero">

@@ -23,7 +23,7 @@ export default class Facilities extends Component
 
                 photo: <Link to="/restaurant/"><img height={400} width={250}   src={SPA} alt="Restaurant" /></Link>,
                 title:"Restaurant",
-                info:'proba'
+                info:'The most delicious food'
 
             },
             {

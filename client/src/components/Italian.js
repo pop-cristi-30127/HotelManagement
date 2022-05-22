@@ -3,8 +3,9 @@ import Hero from "./Hero";
 import { useNavigate } from 'react-router-dom';
 import Banner from "./Banner";
 import TypesOfCuisine from "./TypesOfCuisine"
+
 const Italian = () => {
-    const navigate = useNavigate();
+
     return (
 
 

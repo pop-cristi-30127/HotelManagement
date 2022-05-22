@@ -9,29 +9,44 @@ import Gym from "./components/Gym"
 import Restaurant from "./components/Restaurant"
 import Spa from "./components/Spa"
 import Parking from "./components/Parking"
+import SingleRoom from "./components/SingleRoom";
+import data from "./data";
 
 
 
 
-import {Route,Routes} from "react-router-dom";
+
 import Italian from "./components/Italian";
+
+import {Route,Switch} from "react-router-dom";
+
+import Facilities from "./components/Facilities";
+import Contact from "./components/Contact";
+
+import Booknow from "./components/Booknow";
 
 function App() {
   return (
 
       <>
-        <Navbar/>
-        <Routes>
-          <Route exact path ="/" element={<Home/>}/>
-          <Route exact path="/rooms/" element={<Rooms/>}/>
-          <Route exact path="/login/" element={<Login/>}/>
-          <Route exact path="/gym/" element={<Gym/>}/>
-          <Route exact path="/spa/" element={<Spa/>}/>
-          <Route exact path="/restaurant/" element={<Restaurant/>}/>
-          <Route exact path="/parking/" element={<Parking/>}/>
-            <Route exact path="/Italian_Food/" element={<Italian/>}/>
-          <Route path="*" element={<Error/>}/>
-        </Routes>
+
+          <Navbar/>
+        <Switch>
+          <Route exact path ="/" component={Home}/>
+          <Route exact path="/rooms/" component={Rooms}/>
+            <Route exact path="/rooms/:slug" component={SingleRoom}/>
+          <Route exact path="/login/" component={Login}/>
+          <Route exact path="/gym/" component={Gym}/>
+          <Route exact path="/spa/"component={Spa}/>
+          <Route exact path="/restaurant/"component={Restaurant}/>
+          <Route exact path="/facilities/" component={Facilities}/>
+          <Route exact path="/parking/" component={Parking}/>
+            <Route exact path="/Italian_Food/" component={Italian}/>
+            <Route exact path="/contact/" component={Contact}/>
+            <Route exact path="/booknow/:slug" component={Booknow}/>
+          <Route  path="*" component={Error}/>
+        </Switch>
+
       </>
 
   );

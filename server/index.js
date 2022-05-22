@@ -1,12 +1,23 @@
-const express = require('express')
-const app = express()
-const port = 3000
-const router = require('./router.js');
+const express = require("express");
+const app = express();
+const userRouter=require("./api/users/user.router");
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-router.create(app);
+app.use(express.json());
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+app.use((req,res,next)=>{
+    res.setHeader('Access-Control-Allow-Origin',"http://localhost:3000");
+    res.setHeader('Access-Control-Allow-Headers',"*");
+    res.header('Access-Control-Allow-Credentials', true);
+    next();
+});
+
+
+app.use("/api/users",userRouter);
+
+
+app.listen(3001,()=>{
+    console.log("Server is up and running");
+});
+
+
+

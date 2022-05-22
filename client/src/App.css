@@ -174,7 +174,7 @@ h6 {
   width: 100%;
 
   padding: 0.75rem 2rem;
-  background:transparent;
+  background:var(--offWhite);
   /*background:url("./ProiectII/Frontend/Images/proba3.jpg");
   background-size: cover;*/
   z-index: 1;
@@ -184,7 +184,7 @@ h6 {
   justify-content: space-between;
 }
 .nav-btn {
-  background: transparent;
+  background: var(--offWhite);
   border: none;
   cursor: pointer;
   outline: none;
@@ -280,6 +280,23 @@ h6 {
   background: url("images/proba.jpg") center/cover no-repeat;
   min-height: 60vh;
 }
+ HEAD
+.gymHero{
+  min-height: calc(100vh - 66px);
+  background: url("images/gympoza.jpg") center/cover no-repeat;
+}
+
+.parkingHero {
+  background: url("images/parkingpoza.jpeg") center/cover no-repeat;
+  min-height: 90vh;
+}
+.contactHero
+{
+  background: url("images/Contact.jpg") center/cover no-repeat;
+  min-height: 60vh;
+
+
+}
 /* End of Hero */
 /* Banner */
 .banner {
@@ -350,9 +367,17 @@ h6 {
   background: var(--darkGrey);
   text-align: center;
 }
+.services1 {
+
+  text-align: center;
+}
+.contact {
+
+  text-align: center;
+}
 .services-center {
   width: 90vw;
-  margin: 0 auto;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
   grid-row-gap: 2rem;
@@ -448,9 +473,9 @@ h6 {
 }
 .room-link {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: scale(0);
+  top: 30%;
+  left: 37%;
+  transform: scale(0%);
   transition: all 0.3s linear;
 }
 .img-container:hover {
@@ -632,4 +657,26 @@ h6 {
   margin: 10rem auto;
 }
 /* end of rooms fitler*/
+
+
+/* align an item*/
+.center {
+  width: 30vw;
+  margin: auto;
+  display: grid;
+  padding: 80px 30px 50px;
+}
+/*end of align */
+
+.contact-icon
+{
+  font-size: 3rem;
+  color: var(--primaryColor);
+
+  margin-left: 8px;
+  margin-bottom: 4px;
+  vertical-align: middle;
+
+}
+
 
