@@ -16,7 +16,7 @@ import data from "./data";
 
 
 
-import Italian from "./components/Italian";
+
 
 import {Route,Switch} from "react-router-dom";
 
@@ -24,6 +24,7 @@ import Facilities from "./components/Facilities";
 import Contact from "./components/Contact";
 
 import Booknow from "./components/Booknow";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -41,8 +42,9 @@ function App() {
           <Route exact path="/restaurant/"component={Restaurant}/>
           <Route exact path="/facilities/" component={Facilities}/>
           <Route exact path="/parking/" component={Parking}/>
-            <Route exact path="/Italian_Food/" component={Italian}/>
+
             <Route exact path="/contact/" component={Contact}/>
+            <Route exact path="/register/" component={Register}/>
             <Route exact path="/booknow/:slug" component={Booknow}/>
           <Route  path="*" component={Error}/>
         </Switch>

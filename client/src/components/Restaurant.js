@@ -1,8 +1,7 @@
 import React from 'react'
 import Hero from "./Hero";
-import { useNavigate } from 'react-router-dom';
 import Banner from "./Banner";
-import TypesOfCuisine from "./TypesOfCuisine"
+import Menu from "./Menu";
 const Restaurant = () => {
 
         return (
@@ -14,7 +13,8 @@ const Restaurant = () => {
 
                 </Banner>
                 </Hero>
-                <TypesOfCuisine/>
+                <br/>
+                <Menu/>
                 </React.Fragment>
         )
 

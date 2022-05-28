@@ -51,7 +51,7 @@ class SingleRoom extends Component {
             <>
             <StyledHero img={images[0]}>
                 <Banner title={`${name} room` }>
-                <Link to="/booking" className="btn-primary">
+                <Link to={`/booknow/${this.state.slug}`} className="btn-primary">
                     Book Now
                 </Link>
 
@@ -109,7 +109,7 @@ class SingleRoom extends Component {
                <div className="p-4 clearfix">
                    <div className="row">
                        <div className="col-md-3 col-12 ml-auto">
-                           <Link to={`/booknow/${this.state.slug}`} className="btn btn-outline-primary btn-block btn-lg float-right ">Book Now</Link>
+
                        </div>
                    </div>
                </div>

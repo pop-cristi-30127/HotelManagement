@@ -9,6 +9,17 @@ module.exports={
         const salt=genSaltSync(10);
         console.log(body.Password,salt);
         body.Password=hashSync(body.Password,salt);
+        getUserByEmail(body.Email,(err,results)=>{
+            if(results){
+                return res.status(400).json({
+                    success: 0,
+                    message: "User already exists"
+                });
+            }
+        });
+
+
+
         create(body,(err,results)=>{
             if(err){
                 console.log(err);
@@ -96,7 +107,7 @@ module.exports={
                 console.log(err);
                 return res.status(400).json({
                     success: 0,
-                    data: "MUIE"
+                    data: "Error"
                 });
             }
             if(!results){
@@ -112,10 +123,13 @@ module.exports={
                 const jsontoken=sign({result: results},"qwe1234",{
                     expiresIn: "1h"
                 });
+
+
                 return res.json({
                     success: 1,
                     message: "Login successfull",
                     token: jsontoken
+
                 });
             }else{
                 return res.status(400).json({

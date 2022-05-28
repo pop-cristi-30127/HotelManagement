@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import {Link} from "react-router-dom";
-import {useNavigate} from 'react-router-dom';
+
 import Hero from "./Hero"
 import axios from "../api/axios";
 
@@ -14,8 +14,10 @@ function Login() {
     const [errorMessages, setErrorMessages] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     // const navigate = useNavigate();
+    const[user,setUser]=useState('');
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
+    const [jsontoken,setJsontoken]=useState('');
 
     useEffect(() => {
         setErrorMessages('')
@@ -27,25 +29,50 @@ function Login() {
         event.preventDefault();
         console.log(Email, Password);
         try {
+            const user={Email, Password};
             const response = await axios.post(LOGIN_URL,
-                JSON.stringify({Email, Password}),
+                JSON.stringify(user),
                 {
                     headers: {'Content-Type': 'application/json'},
                     withCredentials: false
                 });
+            setUser(response.data);
 
             console.log(response);
             setEmail('')
             setPassword('')
+            setJsontoken('')
             setErrorMessages('')
             setIsSubmitted(true);
+            localStorage.setItem('user',response.data);
+
+
         } catch (err) {
             if (err) {
                 setErrorMessages(err)
             }
         }
     };
+  /*  useEffect(() => {
+        const loggedInUser = localStorage.getItem('user');
+        if (loggedInUser) {
+            const foundUser = JSON.parse(loggedInUser);
+            setUser(foundUser);
+        }
+    }, []);*/
+    const handleLogout=async(event)=>{
+        event.preventDefault();
+        try{
 
+            localStorage.removeItem('user');
+
+
+        }catch(err){
+            if(err){
+                setErrorMessages(err)
+            }
+        }
+    };
 
     // Generate JSX code for error message
     const renderErrorMessage = () => {
@@ -59,7 +86,7 @@ function Login() {
         <div className="form">
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
-                    <label>Username </label>
+                    <label>Email </label>
                     <input type="email" name="email" required onChange={e => setEmail(e.target.value)}/>
                     {errorMessages ? renderErrorMessage() : ""}
                 </div>
@@ -71,6 +98,9 @@ function Login() {
                 <div className="button-container">
                     <input type="submit"/>
                 </div>
+                <small className="reg1">Don't have an account?  <Link to="/register/" className="reg">Register now</Link></small>
+
+
             </form>
         </div>
     );
@@ -86,6 +116,14 @@ function Login() {
                         <Link to="/rooms" className="btn-primary">
                             Book Now
                         </Link>
+
+
+
+                        <div className="button-container">
+                           <button className="btn-primary" onClick={handleLogout}>Logout</button>
+                        </div>
+
+
 
                     </div> : renderForm}
 
