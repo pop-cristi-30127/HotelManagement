@@ -10,8 +10,8 @@ const Home = () => {
     return (
         <React.Fragment>
         <Hero hero="defaultHero">
-        <Banner title="Beach Resort" subtitle="'The great advantage of a hotel is that it is'">
-            <p>'a refuge from home life.'</p>
+        <Banner title="Beach Resort" subtitle="'The great advantage of a hotel is that it is">
+            <p>a refuge from home life.'</p>
 
             <Link to="/rooms" className="btn-primary">
                 Explore

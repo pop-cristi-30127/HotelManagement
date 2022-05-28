@@ -29,19 +29,19 @@ export default class Facilities extends Component
             {
                 photo:<Link to="/spa/"><img height={400} width={250} src={SPA1} alt="SPA" /></Link>,
                 title:"Spa",
-                info:'proba'
+                info:'Relax your body'
 
             },
             {
                 photo:<Link to="/gym/"><img height={400} width={250} src={Gym} alt="Gym" /></Link>,
                 title:"Gym",
-                info:'proba'
+                info:'Exercise for a better life'
 
             },
             {
                 photo:<Link to="/parking/"><img height={400} width={250} src={Parking} alt="Parking" /></Link>,
                 title:"Car Parking",
-                info:'proba'
+                info:'A room for your car'
 
             }
 
